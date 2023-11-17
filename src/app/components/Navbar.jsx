@@ -1,18 +1,29 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import LogoImage from "../../../public/img/logoMoody.jpg";
+import { Image } from "cloudinary-react";
+import { Cloudinary } from "cloudinary-core";
 
 const Navbar = () => {
   const [navbarSolid, setNavbarSolid] = useState(false);
+  const [logoImageUrl, setLogoImageUrl] = useState(
+    "https://res.cloudinary.com/ddrecezrk/image/upload/v1700114412/Moody%27s/assets/gknjmxfdn1mm9osnmrr7.png"
+  );
 
   const handleScroll = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 20) {
       setNavbarSolid(true);
+      setLogoImageUrl(
+        "https://res.cloudinary.com/ddrecezrk/image/upload/v1700114412/Moody%27s/assets/ylnuyavsymotn5lcdzih.png"
+      );
     } else {
       setNavbarSolid(false);
+      setLogoImageUrl(
+        "https://res.cloudinary.com/ddrecezrk/image/upload/v1700114412/Moody%27s/assets/gknjmxfdn1mm9osnmrr7.png"
+      );
     }
   };
+
+  const cloudinaryCore = new Cloudinary({ cloud_name: "ddrecezrk" });
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -29,21 +40,26 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-10 flex justify-between items-center py-4">
         <div className="flex items-center">
-          <Image
-            src={LogoImage}
-            alt="Moody Shirt"
-            width={40}
-            height={40}
-            className="w-10 h-10 mr-2 rounded-full"
-          />
+          <div className="rounded-full">
+            <Image
+              cloudName="ddrecezrk"
+              publicId={logoImageUrl} // Gunakan variabel state untuk URL gambar
+              alt="Moody Shirt"
+              width={30}
+              height={10}
+              className="w-10 h-10 mr-2"
+            />
+          </div>
 
-          <h1 className="text-xl font-bold text-gray-800">Moody Shirt</h1>
+          <h1 className="text-xl font-bold text-white ps-4">Moody Shirt</h1>
         </div>
         <a
           href="https://api.whatsapp.com/send?phone=123456789"
           target="_blank"
-          className={`bg-primary py-2 px-4 rounded-full text-red-500 hover:bg-red-600 transition-colors ${
-            navbarSolid ? "bg-white" : "text-red-500"
+          className={`py-2 px-4 rounded-full  transition-colors ${
+            navbarSolid
+              ? "bg-white text-red-500 hover:bg-red-600"
+              : "bg-primary text-white hover:bg-red-600"
           }`}
         >
           Shop Now
