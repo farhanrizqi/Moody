@@ -1,4 +1,5 @@
 "use client";
+import react from "react";
 import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import { Cloudinary } from "cloudinary-core";
@@ -51,7 +52,9 @@ const Navbar = () => {
             />
           </div>
 
-          <h1 className="text-xl font-bold text-white ps-4">Moody Shirt</h1>
+          <h1 className="hidden text-xl font-bold text-white ps-4 md:flex">
+            Moody Shirt
+          </h1>
         </div>
         <a
           href="https://api.whatsapp.com/send?phone=123456789"
