@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-screen flex-col items-center justify-between mt-20">
+      <main className="flex flex-col items-center justify-between mt-20 md:mb-40">
         {/* dev start */}
-        <div className="hidden w-full h-screen bg-blue-200 md:flex">
+        <div className="hidden w-full h-screen ">
           <div className="w-screen h-full bg-third">Left</div>
           <div className="w-screen h-full bg-red-500">Right</div>
           <div></div>
@@ -18,8 +18,8 @@ export default function Home() {
         {/* dev end */}
 
         {/* Mobile start */}
-        <div className="w-full h-full flex-col items-center justify-center bg-third">
-          <div className="flex-1 flex justify-center ">
+        <div className="w-full h-full flex-col items-center justify-center bg-third md:h-full">
+          <div className="flex-1 flex justify-center  ">
             <Image
               src={model} // Ganti dengan path gambar sesuai struktur proyek Anda
               alt="Model"
@@ -28,7 +28,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 ">
             <h1 className="text-white text-center text-9xl uppercase ">
               Lift UP
             </h1>
