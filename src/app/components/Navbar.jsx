@@ -57,7 +57,7 @@ const Navbar = () => {
           </h1>
         </div>
         <a
-          href="https://api.whatsapp.com/send?phone=123456789"
+          href="https://api.whatsapp.com/send?phone=089505895330"
           target="_blank"
           className={`py-2 px-4 rounded-full  transition-colors ${
             navbarSolid
