@@ -9,6 +9,9 @@ const Navbar = () => {
   const [logoImageUrl, setLogoImageUrl] = useState(
     "https://res.cloudinary.com/ddrecezrk/image/upload/v1700114412/Moody%27s/assets/gknjmxfdn1mm9osnmrr7.png"
   );
+  const phoneNumber = "+6289505895330"; // Ganti dengan nomor telepon yang benar
+  const encodedPhoneNumber = encodeURIComponent(phoneNumber);
+  const whatsappLink = `https://api.whatsapp.com/send?phone=${encodedPhoneNumber}`;
 
   const handleScroll = () => {
     if (window.scrollY > 20) {
@@ -57,7 +60,7 @@ const Navbar = () => {
           </h1>
         </div>
         <a
-          href="https://api.whatsapp.com/send?phone=089505895330"
+          href={whatsappLink}
           target="_blank"
           className={`py-2 px-4 rounded-full  transition-colors ${
             navbarSolid
