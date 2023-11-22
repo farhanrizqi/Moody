@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+      className={`fixed -top-1  w-full transition-all duration-300 ${
         navbarSolid ? "bg-primary shadow-lg" : "bg-transparent"
       }`}
     >

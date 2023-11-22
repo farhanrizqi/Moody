@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-screen flex-col items-center justify-between pt-20">
+      <main className="flex min-h-screen flex-col items-center justify-between mt-20">
         {/* dev start */}
         <div className="hidden w-full h-screen bg-blue-200 md:flex">
           <div className="w-screen h-full bg-third">Left</div>
@@ -32,7 +32,7 @@ export default function Home() {
             <h1 className="text-white text-center text-9xl uppercase ">
               Lift UP
             </h1>
-            <h1 className="text-white text-center text-6xl tracking-widest">
+            <h1 className="text-white text-center text-7xl tracking-wide">
               Your Mood
             </h1>
           </div>
