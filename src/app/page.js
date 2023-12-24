@@ -36,7 +36,67 @@ export default function Home() {
               Your Mood
             </h1>
           </div>
+
+          {/* detail section start */}
+          <div className="flex flex-col gap-2 w-full h-screen bg-green-200 py-5">
+            {/* sub section 1 start */}
+            <div className="flex flex-1 bg-gray-200">
+              <div className="flex-1 bg-red-200 px-2">
+                <div className="flex flex-col h-full w-full justify-center gap-2">
+                  <h1>Embrace Comfort: Wrap Yourself with Comfort:</h1>
+                  <h3>
+                    Elevate your style with our 24s and 30s cotton combed
+                    fashion. Ensuring a cozy and soft experience.
+                  </h3>
+                </div>
+              </div>
+              <div className="flex flex-1 bg-yellow-200 justify-center items-center">
+                <h1>Picture here</h1>
+              </div>
+            </div>
+            {/* sub section 1 end */}
+
+            {/* sub section 2 start */}
+            <div className="flex flex-1 bg-gray-200">
+              <div className="flex flex-1 justify-center items-center bg-red-200">
+                <h1>Picture here</h1>
+              </div>
+              <div className="flex-1 bg-yellow-200 px-2">
+                <div className="flex flex-col h-full w-full justify-center gap-2 items-end">
+                  <h1 className="text-end">
+                    Where Comfort Meets Style in Every Stitch.
+                  </h1>
+                  <h3 className="text-end">
+                    Each piece is carefully made with chain and overdeck
+                    stitching for style and strength in every seam. Your
+                    wardrobe, crafted for lasting comfort and timeless charm.
+                  </h3>
+                </div>
+              </div>
+            </div>
+            {/* sub section 2 end */}
+
+            {/* sub section 3 start */}
+            <div className="flex flex-1  bg-gray-200">
+              <div className="flex-1 bg-red-200 px-2">
+                <div className="flex flex-col h-full w-full justify-center gap-2">
+                  <h1>DTF Magic in Every Print.</h1>
+                  <h3>
+                    Embrace stunning colors and unbeatable comfort with our DTF
+                    prints. This technique not only ensures vivid designs but
+                    also offers a soft, breathable feel, making each piece
+                    uniquely stylish and incredibly cozy.
+                  </h3>
+                </div>
+              </div>
+              <div className="flex flex-1 bg-yellow-200 justify-center items-center">
+                <h1>Picture here</h1>
+              </div>
+            </div>
+          </div>
+          {/* sub section 3 end */}
         </div>
+        {/* detail section end */}
 
         {/* Mobile end */}
       </main>
