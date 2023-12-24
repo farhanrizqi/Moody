@@ -98,6 +98,11 @@ export default function Home() {
         </div>
         {/* detail section end */}
 
+        {/* why choose us section start */}
+        <div className="flex flex-col w-full h-screen bg-blue-200 pt-5"></div>
+
+        {/* why choose us section end */}
+
         {/* Mobile end */}
       </main>
       <Footer />
