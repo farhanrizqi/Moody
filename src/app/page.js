@@ -1,10 +1,46 @@
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import model from "../../public/img/model.png";
+import Modal from "./components/Modal";
 import "./globals.css";
 
 export default function Home() {
+  const cloudImage =
+    "https://res.cloudinary.com/ddrecezrk/image/upload/v1700114412/Moody%27s/assets/gknjmxfdn1mm9osnmrr7.png";
+  const [isModalMaterial, setModalMaterial] = useState(false);
+  const [isModalStitch, setModalStitch] = useState(false);
+  const [isModalTech, setModalTech] = useState(false);
+  const modalRef = useRef(null);
+
+  const toggleModalMaterial = () => {
+    setModalMaterial(!isModalMaterial);
+  };
+  const toggleModalStitch = () => {
+    setModalStitch(!isModalStitch);
+  };
+  const toggleModalTech = () => {
+    setModalTech(!isModalTech);
+  };
+
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      setModalMaterial(false);
+      setModalStitch(false);
+      setModalTech(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -157,24 +193,59 @@ export default function Home() {
           </div>
           <div className="w-full h-full flex flex-wrap justify-center">
             <div className="w-1/2 sm:w-1/3 lg:w-1/4 p-4">
-              <div className="flex flex-col w-full h-32 mb-4 justify-center items-center gap-3">
+              <div
+                className="flex flex-col w-full h-32 mb-4 justify-center items-center gap-3 bg-red-200"
+                onClick={toggleModalMaterial}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="70"
                   height="70"
                   viewBox="0 0 512 512"
+                  className="cursor-pointer"
                 >
                   <path
                     fill="white"
                     d="M165.446 34.793c-23.17.023-45.634 12.97-54.612 36.323l-83.67 326.167c-12.673 94.537 81.04 88.742 137.957 65.396c81.422-33.396 181.723-29.213 263.244-8.26l6.45-17.218c-7.38-2.638-15.334-5.988-22.252-8.039c.473-4.364.955-8.72 1.437-13.074l23.038 4.118l3.234-18.1c-8.074-1.441-16.147-2.885-24.221-4.328a4816.63 4816.63 0 0 1 1.87-16.189l22.134 3.278l2.693-18.186c-7.548-1.12-15.098-2.238-22.647-3.355c.456-3.765.91-7.53 1.375-11.29c7.615 1.092 15.231 2.183 22.847 3.273l2.607-18.2l-23.164-3.316c.46-3.593 1.29-9.988 1.76-13.577l22.781 2.55l2.045-17.57a56812.69 56812.69 0 0 1-22.402-2.508c.783-5.767 1.917-11.182 2.728-16.943c7.67 1.12 15.341 2.244 23.012 3.368l2.31-17.139c-7.683-1.127-15.366-2.25-23.05-3.374c.792-5.415 1.252-10.129 2.071-15.542c7.074 1.264 14.149 2.528 21.223 3.79l3.232-18.1l-21.654-3.866c.736-4.676 1.473-9.35 2.23-14.026c6.978 1.673 13.955 3.347 20.932 5.022L465.276 208c-7.401-1.778-14.803-3.554-22.204-5.33a2809.25 2809.25 0 0 1 2.132-12.477c6.98 1.583 13.961 3.165 20.942 4.746l4.064-17.93c-7.271-1.65-14.543-3.298-21.815-4.946c.769-4.267 1.55-8.535 2.342-12.805l20.742 5.151l4.431-17.843l-21.751-5.405c.741-3.847 1.494-7.696 2.254-11.548l20.28 5.014l4.413-17.849l-21.057-5.207a2444.47 2444.47 0 0 1 2.571-12.374c8.386 2.41 13.13 2.364 21.41 4.99L486 88.456c-83.808-26.776-179.25-33.22-244.192-6.453c-24.337 114.036-37.305 221.4-68.032 338.64c-3.407 13-14.47 21.89-27.342 28.064c-27 11.608-64.033 13.778-84.63-4.91c-10.971-10.34-16.174-27.036-12.467-47.579c2.303-12.762 10.883-21.986 20.834-26.378c19.749-7.074 43.492-4.25 58.893 7.95c12.463 9.302 12.318 38.283-3.882 31.82c-9.639-6.17-1.964-11.851-8.615-17.378c-11.6-7.428-26.42-10.872-38.972-5.57c-5.564 2.455-8.887 5.737-10.166 12.822c-2.94 16.29.685 24.996 6.985 30.933c18.333 13.49 45.279 10.495 64.068 1.712c10.045-4.82 16.277-11.436 17.511-16.147c30.538-116.518 43.443-224.123 68.293-339.964c-11.796-28.344-35.67-41.247-58.84-41.225"
                   />
                 </svg>
+
                 <div className="w-1/2 h-1.5 rounded bg-primary" />
+
                 <h3 className="text-2xl text-white">Material</h3>
+
+                {isModalMaterial && (
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                    <div
+                      ref={modalRef}
+                      className="bg-white p-8 rounded-xl shadow-md w-1/3 border-4 border-primary relative"
+                    >
+                      <div
+                        className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-25"
+                        style={{
+                          backgroundImage: `url('${cloudImage}')`,
+                        }}
+                      />
+                      {/* Konten modal di sini */}
+                      <p>
+                        Our clothing is made from the finest
+                        materials—specifically, we use Cotton Combed 24s and
+                        30s. This choice ensures a soft and breathable feel,
+                        promising comfort that lasts. Elevate your everyday
+                        style with our commitment to premium materials and
+                        craftsmanship. Thank you for choosing us for your
+                        wardrobe essentials.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="w-1/2 sm:w-1/3 lg:w-1/4 p-4">
-              <div className="flex flex-col w-full h-32 mb-4 justify-center items-center gap-3">
+              <div
+                className="flex flex-col w-full h-32 mb-4 justify-center items-center gap-3"
+                onClick={toggleModalStitch}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="70"
@@ -188,10 +259,36 @@ export default function Home() {
                 </svg>
                 <div className="w-1/2 h-1.5 rounded bg-primary" />
                 <h3 className="text-2xl text-white">Stitches</h3>
+                {isModalStitch && (
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                    <div
+                      ref={modalRef}
+                      className="bg-white p-8 rounded-xl shadow-md w-1/3 border-4 border-primary relative"
+                    >
+                      <div
+                        className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-25"
+                        style={{
+                          backgroundImage: `url('${cloudImage}')`,
+                        }}
+                      />
+                      {/* Konten modal di sini */}
+                      <p>
+                        Each piece is meticulously crafted with precision,
+                        featuring both chain stitching and overdeck stitching.
+                        This not only enhances the durability of our products
+                        but also adds a touch of quality to your wardrobe.
+                        Experience the excellence in every stitch with us.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="w-1/2 sm:w-1/3 lg:w-1/4 p-4">
-              <div className="flex flex-col w-full h-32 mb-4 justify-center items-center gap-3">
+              <div
+                className="flex flex-col w-full h-32 mb-4 justify-center items-center gap-3"
+                onClick={toggleModalTech}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="70"
@@ -205,6 +302,30 @@ export default function Home() {
                 </svg>
                 <div className="w-1/2 h-1.5 rounded bg-primary" />
                 <h3 className="text-2xl text-white">Design</h3>
+                {isModalTech && (
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                    <div
+                      ref={modalRef}
+                      className="bg-white p-8 rounded-xl shadow-md w-1/3 border-4 border-primary relative"
+                    >
+                      <div
+                        className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-25"
+                        style={{
+                          backgroundImage: `url('${cloudImage}')`,
+                        }}
+                      />
+                      {/* Konten modal di sini */}
+                      <p>
+                        At the heart of our designs is the cutting-edge DTF
+                        (Direct-to-Fabric) printing technique, ensuring vibrant
+                        and long-lasting impressions on each garment. Paired
+                        with our fresh and dynamic designs, your style is not
+                        just a statement but a work of art. Elevate your
+                        wardrobe with us, where innovation meets fashion.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
