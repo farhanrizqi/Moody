@@ -34,9 +34,8 @@ const ColorPalette = () => {
   return (
     <Slider {...sliderSettings}>
       {colorPalette.map((item, index) => (
-        <div className="w-full h-full px-1 flex ">
+        <div key={index} className="w-full h-full px-1 flex ">
           <div
-            key={index}
             className={`rounded-xl border-2 border-primary ${item.color}`}
             style={{
               backgroundColor: item.color,
@@ -46,7 +45,7 @@ const ColorPalette = () => {
               justifyContent: "center",
             }}
           >
-            <div className="text-white text-center px-4 flex justify-center items-center rounded-xl bg-primary">
+            <div className="text-white text-center py-1 px-4 flex justify-center items-center rounded-xl bg-primary">
               {item.name}
             </div>
           </div>

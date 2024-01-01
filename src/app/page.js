@@ -333,7 +333,7 @@ export default function Home() {
         {/* color palette section start */}
         <section className="flex flex-col w-full h-auto md:px-20">
           <div className="flex p-10 gap-10">
-            <div className="w-1/3 h-auto">
+            <div className="w-2/5 h-auto">
               <ColorPalette />
             </div>
             <div className="w-full h-auto flex justify-center items-center ">
