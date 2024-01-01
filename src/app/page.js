@@ -331,14 +331,17 @@ export default function Home() {
         {/* why choose us section end */}
 
         {/* color palette section start */}
-        <section className="flex flex-col w-full h-auto md:px-20">
-          <div className="flex p-10 gap-10">
-            <div className="w-2/5 h-auto">
+        <section className="flex flex-col w-full h-auto md:px-20 mt-20 mb-20">
+          <div className="w-full flex px-10 gap-10 items-center ">
+            <div className="w-2/5 h-auto lg:ms-14">
               <ColorPalette />
             </div>
-            <div className="w-full h-auto flex justify-center items-center ">
-              <h1 className="text-center text-white text-2xl">
-                Craft Your Mood, Wear Your Vibe.
+            <div className="w-full h-auto flex flex-col justify-center items-center  lg:ms-14">
+              <h1 className="text-center text-white text-3xl">
+                Color Your Mood
+              </h1>
+              <h1 className="w-full text-center text-white text-3xl md:text-end ">
+                Express Your Hue
               </h1>
             </div>
           </div>

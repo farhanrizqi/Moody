@@ -45,7 +45,7 @@ const ColorPalette = () => {
               justifyContent: "center",
             }}
           >
-            <div className="text-white text-center px-4 flex justify-center items-center rounded-xl bg-primary">
+            <div className="text-white text-center px-4 py-1 flex justify-center items-center rounded-xl bg-primary">
               {item.name}
             </div>
           </div>
