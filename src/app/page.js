@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import model from "../../public/img/model.png";
 import ColorPalette from "./components/ColorPalette";
+import Discount from "./components/DiscountButton";
 import "./globals.css";
 
 export default function Home() {
@@ -331,7 +332,7 @@ export default function Home() {
         {/* why choose us section end */}
 
         {/* color palette section start */}
-        <section className="flex flex-col w-full h-auto md:px-20 mt-20 mb-20">
+        <section className="flex flex-col w-full h-auto md:px-20 mt-20 mb-10">
           <div className="w-full flex px-10 gap-10 items-center ">
             <div className="w-2/5 h-auto lg:ms-14">
               <ColorPalette />
@@ -348,6 +349,25 @@ export default function Home() {
           {/* <ColorPalette /> */}
         </section>
         {/* color palette section end */}
+
+        {/* discount & cta section start */}
+        <section className="flex w-full h-auto py-20 px-6 items-center justify-center md:px-28 lg:px-40">
+          <div className="w-full flex items-center justify-center md:flex-col">
+            <div className="w-full h-full md:flex md:justify-center md:mb-5 ">
+              <h1 className="md:text-3xl text-white">Get yours now</h1>
+            </div>
+            <div className="w-full h-full pt-5 md:h-20">
+              <Discount
+                className=""
+                whatsappLink="https://wa.me/+6289505895330"
+                originalPrice="Rp 100,000"
+                discountedPrice="Rp 99,000"
+                navbarSolid={true}
+              />
+            </div>
+          </div>
+        </section>
+        {/* discount & cta section end */}
         {/* Mobile end */}
       </main>
       <Footer />

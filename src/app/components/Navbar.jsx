@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed -top-1  w-full transition-all duration-300 ${
+      className={`fixed -top-2  w-full transition-all duration-300 z-50 lg:px-20 ${
         navbarSolid ? "bg-primary shadow-lg" : "bg-transparent"
       }`}
     >
@@ -64,7 +64,7 @@ const Navbar = () => {
           target="_blank"
           className={`py-2 px-4 rounded-full  transition-colors ${
             navbarSolid
-              ? "bg-white text-red-500 hover:bg-red-600"
+              ? "bg-white text-red-500 hover:bg-red-600 hover:text-white hover:border-2 hover:border-white"
               : "bg-primary text-white hover:bg-red-600"
           }`}
         >
