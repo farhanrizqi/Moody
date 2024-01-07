@@ -24,9 +24,7 @@ const DiscountButton = ({
       </div>
       <div className="flex relative items-center justify-center bottom-16 md:bottom-20">
         {originalPrice && discountedPrice && (
-          <div className="text-primary md:text-xl line-through me-2">
-            {originalPrice}
-          </div>
+          <div className="text-primary md:text-xl  me-2">{originalPrice}</div>
         )}
         {discountedPrice && (
           <div className="text-white md:text-xl">{discountedPrice}</div>

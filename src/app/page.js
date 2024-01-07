@@ -214,10 +214,10 @@ export default function Home() {
                 <h3 className="text-2xl text-white">Material</h3>
 
                 {isModalMaterial && (
-                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-10">
                     <div
                       ref={modalRef}
-                      className="bg-white p-8 rounded-xl shadow-md w-1/3 border-4 border-primary relative"
+                      className="bg-white p-8 rounded-xl shadow-md w-1/2 border-4 border-primary relative"
                     >
                       <div
                         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-25"
@@ -360,8 +360,8 @@ export default function Home() {
               <Discount
                 className=""
                 whatsappLink="https://wa.me/+6289505895330"
-                originalPrice="Rp 100,000"
-                discountedPrice="Rp 99,000"
+                originalPrice="Start From"
+                discountedPrice="50K IDR"
                 navbarSolid={true}
               />
             </div>
