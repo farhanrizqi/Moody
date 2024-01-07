@@ -259,10 +259,10 @@ export default function Home() {
                 <div className="w-1/2 h-1.5 rounded bg-primary" />
                 <h3 className="text-2xl text-white">Stitches</h3>
                 {isModalStitch && (
-                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-10">
                     <div
                       ref={modalRef}
-                      className="bg-white p-8 rounded-xl shadow-md w-1/3 border-4 border-primary relative"
+                      className="bg-white p-8 rounded-xl shadow-md w-1/2 border-4 border-primary relative"
                     >
                       <div
                         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-25"
@@ -302,10 +302,10 @@ export default function Home() {
                 <div className="w-1/2 h-1.5 rounded bg-primary" />
                 <h3 className="text-2xl text-white">Design</h3>
                 {isModalTech && (
-                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-10">
                     <div
                       ref={modalRef}
-                      className="bg-white p-8 rounded-xl shadow-md w-1/3 border-4 border-primary relative"
+                      className="bg-white p-8 rounded-xl shadow-md w-1/2 border-4 border-primary relative"
                     >
                       <div
                         className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-25"
